@@ -1,13 +1,21 @@
-import Counter from 'components/Counter';
+import Card from 'components/Card';
+import './style.scss';
 
 export default {
     render(h) {
         return (
-            <div class="page">
-                <Counter />
-                <p>
-                    To get started, edit files in <code>./client</code> and save.
-                </p>
+            <div class="cities">
+                <h2 class="cities_header">Погода</h2>
+                <div class="cities_list">
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                </div>
+                <a class="cities_add-city">Добавить город</a>
             </div>
         )
     }
