@@ -17,15 +17,15 @@ const state = {
 
 const mutations = {
     setWeather (state, data) {
-        state.temperature = data.current.temp_c;
-        state.description = data.current.condition.text;
-        state.imgUrl = data.current.condition.icon;
+        state.currentCity.temperature = data.current.temp_c;
+        state.currentCity.description = data.current.condition.text;
+        state.currentCity.imgUrl = data.current.condition.icon;
     },
     setCity (state, cityName) {
-        state.city = cityName;
+        state.currentCity = cityName;
     },
     setNotFound (state) {
-        state.city = null;
+        state.currentCity = null;
     },
     setCities (state, data) {
         state.cities = [

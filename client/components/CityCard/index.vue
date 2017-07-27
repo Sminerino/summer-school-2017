@@ -11,16 +11,16 @@
     export default {
         computed: {
             getCity() {
-                return this.$store.state.city;
+                return this.$store.state.currentCity;
             },
             getTemp() {
-                return this.$store.state.temperature;
+                return this.$store.state.currentCity.temperature;
             },
             getImg() {
-                return this.$store.state.imgUrl;
+                return this.$store.state.currentCity.imgUrl;
             },
             getDescription() {
-                return this.$store.state.description;
+                return this.$store.state.currentCity.description;
             }
         },
         mounted() {
