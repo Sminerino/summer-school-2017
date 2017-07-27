@@ -9,7 +9,7 @@ const _ = require('./utils');
 
 module.exports = {
   entry: {
-    client: './client/index.js'
+    client: './client/index.vue'
   },
   output: {
     path: _.outputPath,

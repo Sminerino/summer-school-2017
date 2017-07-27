@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Home from './../views/Home';
+import Home from '../views/Home/index';
 import Search from './../views/Search';
 import Details from './../views/Details';
 
