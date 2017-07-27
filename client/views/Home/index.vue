@@ -19,6 +19,9 @@ export default {
         cities() {
             return this.$store.cities
         }
+    },
+    mounted() {
+        this.$store.dispatch('getCities');
     }
 }
 </script>

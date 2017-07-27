@@ -6,10 +6,13 @@ import { apiKey } from '../../config.json'
 Vue.use(Vuex);
 
 const state = {
-    temperature: '',
-    city: '',
-    description: '',
-    imgUrl: ''
+    cities: [],
+    currentCity: {
+        temperature: '',
+        city: '',
+        description: '',
+        imgUrl: ''
+    }
 };
 
 const mutations = {
@@ -23,6 +26,12 @@ const mutations = {
     },
     setNotFound (state) {
         state.city = null;
+    },
+    setCities (state, data) {
+        state.cities = [
+            'Perm',
+            'Paris'
+        ]
     }
 };
 
@@ -42,6 +51,14 @@ const actions = {
                 }
             )
             .catch(() => commit('setNotFound'));
+    },
+    getCities ({ commit }) {
+        axios.get(`/city.list.json`)
+            .then(
+                (res) => {
+                    commit('setCities', res)
+                }
+            )
     }
 };
 
