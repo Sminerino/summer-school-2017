@@ -6,15 +6,44 @@ import { apiKey } from '../../config.json'
 Vue.use(Vuex);
 
 const state = {
-    list: [
-        'Perm',
-        'Paris'
-    ]
+    temperature: '',
+    city: '',
+    description: '',
+    imgUrl: ''
 };
 
-const mutations = {}
+const mutations = {
+    setWeather (state, data) {
+        state.temperature = data.current.temp_c;
+        state.description = data.current.condition.text;
+        state.imgUrl = data.current.condition.icon;
+    },
+    setCity (state, cityName) {
+        state.city = cityName;
+    },
+    setNotFound (state) {
+        state.city = null;
+    }
+};
 
-const actions = {};
+const actions = {
+    incrementAsync ({ commit }) {
+        setTimeout(() => {
+            commit('INCREMENT')
+        }, 200)
+    },
+
+    getWeather ({ commit }) {
+        axios
+            .get(`http://api.apixu.com/v1/current.json?key=${apiKey}&q=${state.city}`)
+            .then(
+                (res) => {
+                    commit('setWeather', res.data);
+                }
+            )
+            .catch(() => commit('setNotFound'));
+    }
+};
 
 const store = new Vuex.Store({
     state,
