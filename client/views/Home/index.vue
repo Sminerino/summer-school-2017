@@ -19,7 +19,6 @@ export default {
         cities() {
             return this.$store.cities
         }
-    },
-    cities
+    }
 }
 </script>
