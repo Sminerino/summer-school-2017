@@ -1,12 +1,14 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import axios from 'axios';
-import { apiKey } from '../../config.json'
+import { apiKey } from '../../config.json';
+import cities from '../../db.json';
 
 Vue.use(Vuex);
 
 const state = {
-    cities: [],
+    cities: cities,
+    chosenCities: [],
     currentCity: {
         temperature: '',
         city: '',
@@ -27,21 +29,12 @@ const mutations = {
     setNotFound (state) {
         state.currentCity = null;
     },
-    setCities (state, data) {
-        state.cities = [
-            'Perm',
-            'Paris'
-        ]
+    addCitiy (state, data) {
+        state.chosenCities = []
     }
 };
 
 const actions = {
-    incrementAsync ({ commit }) {
-        setTimeout(() => {
-            commit('INCREMENT')
-        }, 200)
-    },
-
     getWeather ({ commit }) {
         axios
             .get(`http://api.apixu.com/v1/current.json?key=${apiKey}&q=${state.city}`)
@@ -51,14 +44,6 @@ const actions = {
                 }
             )
             .catch(() => commit('setNotFound'));
-    },
-    getCities ({ commit }) {
-        axios.get(`/city.list.json`)
-            .then(
-                (res) => {
-                    commit('setCities', res)
-                }
-            )
     }
 };
 
