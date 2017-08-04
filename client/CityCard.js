@@ -9,7 +9,7 @@ class City {
 
     render() {
         const template = `
-        <div class=${styles.city-card}>
+        <div class=${styles.city_card}>
            <img class="city-card__img" src="${this.imgUrl}">
            <span class="city-card__condition">
              Overcast
