@@ -1,0 +1,128 @@
+$text-color-light: #8262A6;
+$text-color-dark: #4A395D;
+$bg-color: #DBDBDB;
+$intake-bg-color: #E5E5E5;
+$button-color: #C4C4C4;
+$border-color: #A0A0A0;
+$font-header: Regular 12pt Muli;
+$font-info: Regular 18pt Muli;
+
+body {
+    display: flex; 
+    flex-flow: row;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+.container{
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: $bg-color;
+    width: 100%;
+
+}
+.intake{
+    background:transparent;
+    margin: 10px 38px 11px 38px;
+    display: flex;
+    align-self: stretch;
+    flex-flow: column;
+    justify-content: flex-start;
+
+    &__title {
+        margin-bottom: 4px;
+        font: $font-header;
+        color: $text-color-light;
+        font-weight: 900;
+    }
+
+    &__food-tiles-container {
+        margin:0 0 0 0;
+        font: $font-info;
+        color: $text-color-dark;
+        padding: 10px 18px 20px 18px;
+        background-color: $intake-bg-color;
+    }
+
+    &__column-headers {
+       display: flex;
+       flex-flow: row;
+    }
+
+    &__column {
+        padding: 0px 5px 0px 5px;
+    }
+
+    &__column-namefiller {
+        flex-grow: 1;
+    }
+
+    &__amount-headers {
+        display: flex;
+        flex-grow: 0.4;
+        justify-content: flex-end;
+        flex-basis: 0;
+        padding-right:70px;
+    }
+
+    &__composition-headers {
+        display: flex;
+        flex-grow: 0.2;
+        flex-shrink: 1;
+        justify-content: space-between;
+        flex-basis: 0;
+    }
+}
+.food-tile {
+    
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    padding: 25px 3px 25px 3px;
+    border-bottom: 1px solid #a0a0a0;
+
+    &_last {
+        border: transparent;
+    }
+
+    &__title {
+        display: flex;
+        flex-grow: 1;
+        flex-basis: 0;
+    }
+
+    &__amount {
+        display: flex;
+        flex-grow: 0.4;
+        flex-basis: 0;
+        justify-content: flex-end;
+        padding-right: 70px;
+    }
+
+    &__composition {
+        display: inherit;
+        flex-grow: 0.2;
+        flex-basis: 0;
+        justify-content: space-between;
+    }
+    &__weight {
+       padding: 0px 5px 0px 5px;
+    }
+    &__calories {
+        padding: 0px 5px 0px 5px;
+    }
+
+    &__carb {
+        padding: 0px 5px 0px 5px;    
+    }
+
+    &__prot {
+        padding: 0px 5px 0px 5px;
+    }
+
+    &__fats {
+        padding: 0px 5px 0px 5px;
+    }
+}
