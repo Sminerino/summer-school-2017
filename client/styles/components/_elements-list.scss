@@ -42,37 +42,70 @@ body {
         margin:0 0 0 0;
         font: $font-info;
         color: $text-color-dark;
-        padding: 10px 18px 20px 18px;
+        padding: 10px 18px 10px 18px;
         background-color: $intake-bg-color;
     }
 
     &__column-headers {
        display: flex;
        flex-flow: row;
+       justify-content: flex-end;
     }
 
     &__column {
         padding: 0px 5px 0px 5px;
-    }
+        display: flex;
+        justify-content: center;
+        text-align: center;
 
-    &__column-namefiller {
-        flex-grow: 1;
+        &_type_weight {
+            padding-right: 15px;
+        }
     }
 
     &__amount-headers {
         display: flex;
-        flex-grow: 0.4;
+        flex-grow: 1;
         justify-content: flex-end;
         flex-basis: 0;
         padding-right:70px;
+        flex-shrink: 4;
     }
 
     &__composition-headers {
         display: flex;
-        flex-grow: 0.2;
+        flex-grow: 0.15;
         flex-shrink: 1;
         justify-content: space-between;
         flex-basis: 0;
+    }
+
+    &__add-button-container {
+        display: flex;
+        justify-content: center;
+        background-color: #c4c4c4;
+        padding: 10px 0px 10px 0px;
+        
+        &:hover {
+            & .intake__add-button {
+                background-color: $text-color-dark;
+            }
+            background-color: $border-color;
+        }
+    }
+
+    &__add-button {
+        background-color: $text-color-light;
+        font-style: bold;
+        border-radius: 1000px;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+        color: #d5d5d5;
+        box-shadow: 2px 3px 2px rgba(0,0,0,0.25);
     }
 }
 .food-tile {
@@ -108,21 +141,26 @@ body {
         justify-content: space-between;
     }
     &__weight {
-       padding: 0px 5px 0px 5px;
+       padding: 0px 15px 0px 5px;
+       flex-basis:0;
     }
     &__calories {
         padding: 0px 5px 0px 5px;
+        flex-basis:0;
     }
 
     &__carb {
-        padding: 0px 5px 0px 5px;    
+        padding: 0px 5px 0px 5px; 
+        text-align: center;   
     }
 
     &__prot {
         padding: 0px 5px 0px 5px;
+        text-align: center;   
     }
 
     &__fats {
         padding: 0px 5px 0px 5px;
+        text-align: center;   
     }
 }
