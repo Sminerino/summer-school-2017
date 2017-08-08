@@ -8,8 +8,8 @@ const app = new Vue({
         render(h) {
                 return (
                         <div class="container" >
-                        <h1 class="page__title">Weather</h1>
-                        <list></list>
+                                <h1 class="page__title">Weather</h1>
+                                <list></list>
                         </div>
                 );
         },
